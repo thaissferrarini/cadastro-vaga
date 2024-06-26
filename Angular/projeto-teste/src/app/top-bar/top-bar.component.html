@@ -1,0 +1,47 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+
+  </ng-template>
+  <ng-template pTemplate="item" let-item let-root="root">
+    <a pRipple class="flex align-items-center p-menuitem-link">
+      <span [class]="item.icon"></span>
+      <span class="ml-2">{{ item.label }}</span>
+      <p-badge (click)="op.toggle($event)" *ngIf="item.badge" [ngClass]="{ 'ml-auto': !root, 'ml-2': root }"
+        [value]="item.badge" />
+      <span *ngIf="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{
+        item.shortcut }}</span>
+      <i *ngIf="item.items" [ngClass]="['pi', root ? 'pi-angle-down ml-2' : 'pi-angle-right ml-auto']"></i>
+    </a>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <i (click)="op.toggle($event)" class="pi pi-bell mr-4 p-text-secondary" pBadge style="font-size: 2rem"
+      [value]="notificacoes.length"></i>
+  </ng-template>
+</p-menubar>
+
+
+
+<p-overlayPanel #op>
+  <div class="flex flex-column gap-3 w-25rem">
+    <div>
+      <span class="font-medium  block mb-3" style="color: #3B82F6;">Notificações</span>
+      <ul class="list-none p-0 m-0 flex flex-column gap-3">
+        <li *ngFor="let notificacao of notificacoes" class="flex align-items-center gap-2">
+          <br>
+          <br>
+          <br>
+          <img [src]="'https://primefaces.org/cdn/primeng/images/demo/avatar/bernardodominic.png'"
+            style="width: 32px" />
+          <div>
+            <span  class="font-medium">{{notificacao.nome}}</span>
+            <div class="text-sm text-color-secondary">
+              {{notificacao.menssagem}}
+            </div>
+            <hr>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</p-overlayPanel>

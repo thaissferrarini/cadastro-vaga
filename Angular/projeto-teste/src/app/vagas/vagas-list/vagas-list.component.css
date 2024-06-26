@@ -1,0 +1,36 @@
+.vagas-list-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .vagas-list-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .vagas-list-container th, .vagas-list-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .vagas-list-container th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: black;
+  }
+  
+  .vagas-list-container td button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .vagas-list-container td button:hover {
+    background-color: #0056b3;
+  }

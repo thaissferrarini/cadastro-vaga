@@ -1,0 +1,28 @@
+<div>
+    <h2>{{ titulo }}</h2>
+  </div>
+  
+  <div class="card p-shadow-6">
+    <div style="padding: 1%;">
+      <form [formGroup]="formModel" class="p-grid p-fluid">
+        <div class="p-field p-grid p-md-12">
+          <div class="p-col-12 p-md-12">
+            <label class="p-mb-2 p-md-2">Titulo<span class="p-required">*</span></label>
+            <input formControlName="titulo" type="text" placeholder="Titulo" [required]="true" pInputText>
+          </div>
+          <div class="p-col-12 p-md-6">
+            <label class="p-md-2">Descrição<span class="p-required">*</span></label>
+            <input formControlName="descricao" type="text" placeholder="Descrição" [required]="true" pInputText>
+          </div>
+          <div class="p-col-12 p-md-6">
+            <label class="p-md-2">Requisito<span class="p-required">*</span></label>
+            <input formControlName="requisito" type="text" placeholder="Requisito" [required]="true" pInputText>
+          </div>
+        </div>
+      </form>
+      <div class="p-grid p-justify-end p-md-12">
+        <button (click)="salvar()" pButton type="button" label="Salvar" class="p-button-success"></button>
+        <button type="button" pButton label="Cancelar" routerLink="/vagas" class="p-button-danger"></button>
+      </div>
+    </div>
+  </div>

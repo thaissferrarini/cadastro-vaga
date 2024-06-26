@@ -1,0 +1,14 @@
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+:host ::ng-deep .p-datatable {
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
